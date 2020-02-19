@@ -126,10 +126,6 @@
             {suffix}
           </span>
         {/each}
-        {#if suffixes.length == 0}
-          <img class="party" src="/party.svg" />
-          <h3>All done!</h3>
-        {/if}
       {/if}
     </div>
     <div class="answers">

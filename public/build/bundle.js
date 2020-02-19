@@ -7518,8 +7518,7 @@ var app = (function () {
 
     // (115:6) {#if !preview}
     function create_if_block$1(ctx) {
-    	let t;
-    	let if_block_anchor;
+    	let each_1_anchor;
     	let each_value_1 = /*suffixes*/ ctx[2];
     	let each_blocks = [];
 
@@ -7527,26 +7526,20 @@ var app = (function () {
     		each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
     	}
 
-    	let if_block = /*suffixes*/ ctx[2].length == 0 && create_if_block_1$1(ctx);
-
     	const block = {
     		c: function create() {
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t = space();
-    			if (if_block) if_block.c();
-    			if_block_anchor = empty();
+    			each_1_anchor = empty();
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(target, anchor);
     			}
 
-    			insert_dev(target, t, anchor);
-    			if (if_block) if_block.m(target, anchor);
-    			insert_dev(target, if_block_anchor, anchor);
+    			insert_dev(target, each_1_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*suffixes, elsOffset, els*/ 388) {
@@ -7561,7 +7554,7 @@ var app = (function () {
     					} else {
     						each_blocks[i] = create_each_block_1(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(t.parentNode, t);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
     					}
     				}
 
@@ -7571,23 +7564,10 @@ var app = (function () {
 
     				each_blocks.length = each_value_1.length;
     			}
-
-    			if (/*suffixes*/ ctx[2].length == 0) {
-    				if (!if_block) {
-    					if_block = create_if_block_1$1(ctx);
-    					if_block.c();
-    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
-    				}
-    			} else if (if_block) {
-    				if_block.d(1);
-    				if_block = null;
-    			}
     		},
     		d: function destroy(detaching) {
     			destroy_each(each_blocks, detaching);
-    			if (detaching) detach_dev(t);
-    			if (if_block) if_block.d(detaching);
-    			if (detaching) detach_dev(if_block_anchor);
+    			if (detaching) detach_dev(each_1_anchor);
     		}
     	};
 
@@ -7605,8 +7585,9 @@ var app = (function () {
     // (116:8) {#each suffixes as suffix}
     function create_each_block_1(ctx) {
     	let span;
-    	let t_value = /*suffix*/ ctx[20] + "";
-    	let t;
+    	let t0_value = /*suffix*/ ctx[20] + "";
+    	let t0;
+    	let t1;
     	let span_id_value;
     	let suffix = /*suffix*/ ctx[20];
     	let dispose;
@@ -7620,7 +7601,8 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			span = element("span");
-    			t = text(t_value);
+    			t0 = text(t0_value);
+    			t1 = space();
     			attr_dev(span, "id", span_id_value = /*suffix*/ ctx[20]);
     			set_style(span, "transform", "translate(" + /*elsOffset*/ ctx[8][/*suffix*/ ctx[20]].x + "px, " + /*elsOffset*/ ctx[8][/*suffix*/ ctx[20]].y + "px)");
     			attr_dev(span, "class", "suffix draggable svelte-16z88ea");
@@ -7629,13 +7611,14 @@ var app = (function () {
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
-    			append_dev(span, t);
+    			append_dev(span, t0);
+    			append_dev(span, t1);
     			assign_span();
     			dispose = listen_dev(span, "dragstart", dragstart_handler, false, false, false);
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*suffixes*/ 4 && t_value !== (t_value = /*suffix*/ ctx[20] + "")) set_data_dev(t, t_value);
+    			if (dirty & /*suffixes*/ 4 && t0_value !== (t0_value = /*suffix*/ ctx[20] + "")) set_data_dev(t0, t0_value);
 
     			if (dirty & /*suffixes*/ 4 && span_id_value !== (span_id_value = /*suffix*/ ctx[20])) {
     				attr_dev(span, "id", span_id_value);
@@ -7669,48 +7652,7 @@ var app = (function () {
     	return block;
     }
 
-    // (129:8) {#if suffixes.length == 0}
-    function create_if_block_1$1(ctx) {
-    	let img;
-    	let img_src_value;
-    	let t0;
-    	let h3;
-
-    	const block = {
-    		c: function create() {
-    			img = element("img");
-    			t0 = space();
-    			h3 = element("h3");
-    			h3.textContent = "All done!";
-    			attr_dev(img, "class", "party");
-    			if (img.src !== (img_src_value = "/party.svg")) attr_dev(img, "src", img_src_value);
-    			add_location(img, file$9, 129, 10, 4080);
-    			add_location(h3, file$9, 130, 10, 4129);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, img, anchor);
-    			insert_dev(target, t0, anchor);
-    			insert_dev(target, h3, anchor);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(img);
-    			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(h3);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block_1$1.name,
-    		type: "if",
-    		source: "(129:8) {#if suffixes.length == 0}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (136:6) {#each source as answer}
+    // (132:6) {#each source as answer}
     function create_each_block$1(ctx) {
     	let div;
     	let h3;
@@ -7738,12 +7680,12 @@ var app = (function () {
     			t2 = text(t2_value);
     			t3 = space();
     			attr_dev(h3, "class", "subtitle");
-    			add_location(h3, file$9, 139, 10, 4369);
+    			add_location(h3, file$9, 135, 10, 4242);
     			attr_dev(p, "class", "match");
-    			add_location(p, file$9, 140, 10, 4417);
+    			add_location(p, file$9, 136, 10, 4290);
     			attr_dev(div, "class", div_class_value = "" + (null_to_empty(`box dropzone ${/*dropzoneClasses*/ ctx[3][/*answer*/ ctx[17][2]].join(" ")}`) + " svelte-16z88ea"));
     			attr_dev(div, "id", div_id_value = "box" + /*answer*/ ctx[17][2]);
-    			add_location(div, file$9, 136, 8, 4250);
+    			add_location(div, file$9, 132, 8, 4123);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -7772,7 +7714,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(136:6) {#each source as answer}",
+    		source: "(132:6) {#each source as answer}",
     		ctx
     	});
 
@@ -7834,13 +7776,13 @@ var app = (function () {
     			attr_dev(div0, "class", "spacing");
     			add_location(div0, file$9, 113, 4, 3560);
     			attr_dev(div1, "class", "answers");
-    			add_location(div1, file$9, 134, 4, 4189);
+    			add_location(div1, file$9, 130, 4, 4062);
     			attr_dev(button0, "class", "reset");
-    			add_location(button0, file$9, 147, 6, 4634);
+    			add_location(button0, file$9, 143, 6, 4507);
     			attr_dev(button1, "class", "show-answers");
-    			add_location(button1, file$9, 148, 6, 4694);
+    			add_location(button1, file$9, 144, 6, 4567);
     			attr_dev(div2, "class", "controls");
-    			add_location(div2, file$9, 146, 4, 4605);
+    			add_location(div2, file$9, 142, 4, 4478);
     			attr_dev(div3, "class", "content");
     			add_location(div3, file$9, 101, 2, 3246);
     			attr_dev(div4, "class", "block");
