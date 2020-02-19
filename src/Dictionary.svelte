@@ -118,11 +118,7 @@
             id={suffix}
             style="transform: translate({elsOffset[suffix].x}px, {elsOffset[suffix].y}px)"
             class="suffix draggable"
-            bind:this={els[suffix]}
-            draggable="true"
-            on:dragstart={e => {
-              e.dataTransfer.setData('text/plain', suffix);
-            }}>
+            bind:this={els[suffix]}>
             {suffix}
           </span>
         {/each}

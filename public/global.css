@@ -50,6 +50,12 @@ body {
   padding: 5px 10px;
   margin: 10px;
 }
+.box.pointer {
+  cursor: pointer;
+}
+.box.blur .match {
+  filter: blur(10px);
+}
 .box.success {
   border: 2px solid #4caf50;
 }
@@ -105,6 +111,7 @@ body {
   font-family: sans-serif;
   margin: 0px;
   margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .draggable {

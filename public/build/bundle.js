@@ -7506,13 +7506,13 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[17] = list[i];
+    	child_ctx[16] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[20] = list[i];
+    	child_ctx[19] = list[i];
     	return child_ctx;
     }
 
@@ -7585,28 +7585,22 @@ var app = (function () {
     // (116:8) {#each suffixes as suffix}
     function create_each_block_1(ctx) {
     	let span;
-    	let t0_value = /*suffix*/ ctx[20] + "";
+    	let t0_value = /*suffix*/ ctx[19] + "";
     	let t0;
     	let t1;
     	let span_id_value;
-    	let suffix = /*suffix*/ ctx[20];
-    	let dispose;
+    	let suffix = /*suffix*/ ctx[19];
     	const assign_span = () => /*span_binding*/ ctx[14](span, suffix);
     	const unassign_span = () => /*span_binding*/ ctx[14](null, suffix);
-
-    	function dragstart_handler(...args) {
-    		return /*dragstart_handler*/ ctx[15](/*suffix*/ ctx[20], ...args);
-    	}
 
     	const block = {
     		c: function create() {
     			span = element("span");
     			t0 = text(t0_value);
     			t1 = space();
-    			attr_dev(span, "id", span_id_value = /*suffix*/ ctx[20]);
-    			set_style(span, "transform", "translate(" + /*elsOffset*/ ctx[8][/*suffix*/ ctx[20]].x + "px, " + /*elsOffset*/ ctx[8][/*suffix*/ ctx[20]].y + "px)");
+    			attr_dev(span, "id", span_id_value = /*suffix*/ ctx[19]);
+    			set_style(span, "transform", "translate(" + /*elsOffset*/ ctx[8][/*suffix*/ ctx[19]].x + "px, " + /*elsOffset*/ ctx[8][/*suffix*/ ctx[19]].y + "px)");
     			attr_dev(span, "class", "suffix draggable svelte-16z88ea");
-    			attr_dev(span, "draggable", "true");
     			add_location(span, file$9, 116, 10, 3648);
     		},
     		m: function mount(target, anchor) {
@@ -7614,30 +7608,28 @@ var app = (function () {
     			append_dev(span, t0);
     			append_dev(span, t1);
     			assign_span();
-    			dispose = listen_dev(span, "dragstart", dragstart_handler, false, false, false);
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*suffixes*/ 4 && t0_value !== (t0_value = /*suffix*/ ctx[20] + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*suffixes*/ 4 && t0_value !== (t0_value = /*suffix*/ ctx[19] + "")) set_data_dev(t0, t0_value);
 
-    			if (dirty & /*suffixes*/ 4 && span_id_value !== (span_id_value = /*suffix*/ ctx[20])) {
+    			if (dirty & /*suffixes*/ 4 && span_id_value !== (span_id_value = /*suffix*/ ctx[19])) {
     				attr_dev(span, "id", span_id_value);
     			}
 
     			if (dirty & /*elsOffset, suffixes*/ 260) {
-    				set_style(span, "transform", "translate(" + /*elsOffset*/ ctx[8][/*suffix*/ ctx[20]].x + "px, " + /*elsOffset*/ ctx[8][/*suffix*/ ctx[20]].y + "px)");
+    				set_style(span, "transform", "translate(" + /*elsOffset*/ ctx[8][/*suffix*/ ctx[19]].x + "px, " + /*elsOffset*/ ctx[8][/*suffix*/ ctx[19]].y + "px)");
     			}
 
-    			if (suffix !== /*suffix*/ ctx[20]) {
+    			if (suffix !== /*suffix*/ ctx[19]) {
     				unassign_span();
-    				suffix = /*suffix*/ ctx[20];
+    				suffix = /*suffix*/ ctx[19];
     				assign_span();
     			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(span);
     			unassign_span();
-    			dispose();
     		}
     	};
 
@@ -7652,18 +7644,18 @@ var app = (function () {
     	return block;
     }
 
-    // (132:6) {#each source as answer}
+    // (128:6) {#each source as answer}
     function create_each_block$1(ctx) {
     	let div;
     	let h3;
-    	let t0_value = /*answer*/ ctx[17][0] + "";
+    	let t0_value = /*answer*/ ctx[16][0] + "";
     	let t0;
     	let t1;
     	let p;
 
-    	let t2_value = (/*dropzoneComplete*/ ctx[4][/*answer*/ ctx[17][2]] || /*preview*/ ctx[6]
-    	? /*answer*/ ctx[17][1].slice(0, -1) + /*answer*/ ctx[17][2].slice(1)
-    	: /*answer*/ ctx[17][1]) + "";
+    	let t2_value = (/*dropzoneComplete*/ ctx[4][/*answer*/ ctx[16][2]] || /*preview*/ ctx[6]
+    	? /*answer*/ ctx[16][1].slice(0, -1) + /*answer*/ ctx[16][2].slice(1)
+    	: /*answer*/ ctx[16][1]) + "";
 
     	let t2;
     	let t3;
@@ -7680,12 +7672,12 @@ var app = (function () {
     			t2 = text(t2_value);
     			t3 = space();
     			attr_dev(h3, "class", "subtitle");
-    			add_location(h3, file$9, 135, 10, 4242);
+    			add_location(h3, file$9, 131, 10, 4105);
     			attr_dev(p, "class", "match");
-    			add_location(p, file$9, 136, 10, 4290);
-    			attr_dev(div, "class", div_class_value = "" + (null_to_empty(`box dropzone ${/*dropzoneClasses*/ ctx[3][/*answer*/ ctx[17][2]].join(" ")}`) + " svelte-16z88ea"));
-    			attr_dev(div, "id", div_id_value = "box" + /*answer*/ ctx[17][2]);
-    			add_location(div, file$9, 132, 8, 4123);
+    			add_location(p, file$9, 132, 10, 4153);
+    			attr_dev(div, "class", div_class_value = "" + (null_to_empty(`box dropzone ${/*dropzoneClasses*/ ctx[3][/*answer*/ ctx[16][2]].join(" ")}`) + " svelte-16z88ea"));
+    			attr_dev(div, "id", div_id_value = "box" + /*answer*/ ctx[16][2]);
+    			add_location(div, file$9, 128, 8, 3986);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -7697,11 +7689,11 @@ var app = (function () {
     			append_dev(div, t3);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*dropzoneComplete, preview*/ 80 && t2_value !== (t2_value = (/*dropzoneComplete*/ ctx[4][/*answer*/ ctx[17][2]] || /*preview*/ ctx[6]
-    			? /*answer*/ ctx[17][1].slice(0, -1) + /*answer*/ ctx[17][2].slice(1)
-    			: /*answer*/ ctx[17][1]) + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*dropzoneComplete, preview*/ 80 && t2_value !== (t2_value = (/*dropzoneComplete*/ ctx[4][/*answer*/ ctx[16][2]] || /*preview*/ ctx[6]
+    			? /*answer*/ ctx[16][1].slice(0, -1) + /*answer*/ ctx[16][2].slice(1)
+    			: /*answer*/ ctx[16][1]) + "")) set_data_dev(t2, t2_value);
 
-    			if (dirty & /*dropzoneClasses*/ 8 && div_class_value !== (div_class_value = "" + (null_to_empty(`box dropzone ${/*dropzoneClasses*/ ctx[3][/*answer*/ ctx[17][2]].join(" ")}`) + " svelte-16z88ea"))) {
+    			if (dirty & /*dropzoneClasses*/ 8 && div_class_value !== (div_class_value = "" + (null_to_empty(`box dropzone ${/*dropzoneClasses*/ ctx[3][/*answer*/ ctx[16][2]].join(" ")}`) + " svelte-16z88ea"))) {
     				attr_dev(div, "class", div_class_value);
     			}
     		},
@@ -7714,7 +7706,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(132:6) {#each source as answer}",
+    		source: "(128:6) {#each source as answer}",
     		ctx
     	});
 
@@ -7776,13 +7768,13 @@ var app = (function () {
     			attr_dev(div0, "class", "spacing");
     			add_location(div0, file$9, 113, 4, 3560);
     			attr_dev(div1, "class", "answers");
-    			add_location(div1, file$9, 130, 4, 4062);
+    			add_location(div1, file$9, 126, 4, 3925);
     			attr_dev(button0, "class", "reset");
-    			add_location(button0, file$9, 143, 6, 4507);
+    			add_location(button0, file$9, 139, 6, 4370);
     			attr_dev(button1, "class", "show-answers");
-    			add_location(button1, file$9, 144, 6, 4567);
+    			add_location(button1, file$9, 140, 6, 4430);
     			attr_dev(div2, "class", "controls");
-    			add_location(div2, file$9, 142, 4, 4478);
+    			add_location(div2, file$9, 138, 4, 4341);
     			attr_dev(div3, "class", "content");
     			add_location(div3, file$9, 101, 2, 3246);
     			attr_dev(div4, "class", "block");
@@ -7818,7 +7810,7 @@ var app = (function () {
     				listen_dev(textarea, "input", /*textarea_input_handler*/ ctx[12]),
     				listen_dev(textarea, "input", /*input_handler*/ ctx[13], false, false, false),
     				listen_dev(button0, "click", /*reset*/ ctx[10], false, false, false),
-    				listen_dev(button1, "click", /*click_handler*/ ctx[16], false, false, false)
+    				listen_dev(button1, "click", /*click_handler*/ ctx[15], false, false, false)
     			];
     		},
     		p: function update(ctx, [dirty]) {
@@ -8007,10 +7999,6 @@ var app = (function () {
     		});
     	}
 
-    	const dragstart_handler = (suffix, e) => {
-    		e.dataTransfer.setData("text/plain", suffix);
-    	};
-
     	const click_handler = () => $$invalidate(6, preview = !preview);
 
     	$$self.$capture_state = () => {
@@ -8059,7 +8047,6 @@ var app = (function () {
     		textarea_input_handler,
     		input_handler,
     		span_binding,
-    		dragstart_handler,
     		click_handler
     	];
     }
@@ -8079,18 +8066,221 @@ var app = (function () {
     }
 
     /* src/WordComponents.svelte generated by Svelte v3.18.2 */
+    const file$a = "src/WordComponents.svelte";
+
+    function get_each_context$2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[13] = list[i];
+    	return child_ctx;
+    }
+
+    // (45:6) {#each source as answer}
+    function create_each_block$2(ctx) {
+    	let div;
+    	let h3;
+    	let t0_value = /*answer*/ ctx[13][1] + "";
+    	let t0;
+    	let t1;
+    	let p;
+    	let t2_value = /*answer*/ ctx[13][0] + "";
+    	let t2;
+    	let t3;
+    	let div_class_value;
+    	let div_id_value;
+    	let dispose;
+
+    	function click_handler(...args) {
+    		return /*click_handler*/ ctx[11](/*answer*/ ctx[13], ...args);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			h3 = element("h3");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			p = element("p");
+    			t2 = text(t2_value);
+    			t3 = space();
+    			attr_dev(h3, "class", "subtitle");
+    			add_location(h3, file$a, 49, 10, 1494);
+    			attr_dev(p, "class", "match");
+    			add_location(p, file$a, 50, 10, 1542);
+
+    			attr_dev(div, "class", div_class_value = "box dropzone pointer " + (/*blurs*/ ctx[2][/*answer*/ ctx[13][1]] && !/*preview*/ ctx[4]
+    			? "blur"
+    			: ""));
+
+    			attr_dev(div, "id", div_id_value = "box" + /*answer*/ ctx[13][1]);
+    			add_location(div, file$a, 45, 8, 1298);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, h3);
+    			append_dev(h3, t0);
+    			append_dev(div, t1);
+    			append_dev(div, p);
+    			append_dev(p, t2);
+    			append_dev(div, t3);
+    			dispose = listen_dev(div, "click", click_handler, false, false, false);
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+
+    			if (dirty & /*blurs, preview*/ 20 && div_class_value !== (div_class_value = "box dropzone pointer " + (/*blurs*/ ctx[2][/*answer*/ ctx[13][1]] && !/*preview*/ ctx[4]
+    			? "blur"
+    			: ""))) {
+    				attr_dev(div, "class", div_class_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$2.name,
+    		type: "each",
+    		source: "(45:6) {#each source as answer}",
+    		ctx
+    	});
+
+    	return block;
+    }
 
     function create_fragment$b(ctx) {
+    	let div3;
+    	let div2;
+    	let textarea;
+    	let textarea_style_value;
+    	let t0;
+    	let div0;
+    	let t1;
+    	let div1;
+    	let button0;
+    	let t3;
+    	let button1;
+    	let t4_value = (/*preview*/ ctx[4] ? "Hide answers" : "Show answers") + "";
+    	let t4;
+    	let dispose;
+    	let each_value = /*source*/ ctx[5];
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+    	}
+
     	const block = {
-    		c: noop,
+    		c: function create() {
+    			div3 = element("div");
+    			div2 = element("div");
+    			textarea = element("textarea");
+    			t0 = space();
+    			div0 = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t1 = space();
+    			div1 = element("div");
+    			button0 = element("button");
+    			button0.textContent = "Reset";
+    			t3 = space();
+    			button1 = element("button");
+    			t4 = text(t4_value);
+    			attr_dev(textarea, "rows", "1");
+    			attr_dev(textarea, "class", "h2");
+    			attr_dev(textarea, "placeholder", "Title...");
+    			attr_dev(textarea, "style", textarea_style_value = `height:${/*height*/ ctx[1]}`);
+    			add_location(textarea, file$a, 31, 4, 948);
+    			attr_dev(div0, "class", "answers");
+    			add_location(div0, file$a, 43, 4, 1237);
+    			attr_dev(button0, "class", "reset");
+    			add_location(button0, file$a, 55, 6, 1648);
+    			attr_dev(button1, "class", "show-answers");
+    			add_location(button1, file$a, 56, 6, 1708);
+    			attr_dev(div1, "class", "controls");
+    			add_location(div1, file$a, 54, 4, 1619);
+    			attr_dev(div2, "class", "content");
+    			add_location(div2, file$a, 30, 2, 922);
+    			attr_dev(div3, "class", "block");
+    			add_location(div3, file$a, 29, 0, 900);
+    		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
-    		m: noop,
-    		p: noop,
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, div2);
+    			append_dev(div2, textarea);
+    			/*textarea_binding*/ ctx[8](textarea);
+    			set_input_value(textarea, /*content*/ ctx[0]);
+    			append_dev(div2, t0);
+    			append_dev(div2, div0);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div0, null);
+    			}
+
+    			append_dev(div2, t1);
+    			append_dev(div2, div1);
+    			append_dev(div1, button0);
+    			append_dev(div1, t3);
+    			append_dev(div1, button1);
+    			append_dev(button1, t4);
+
+    			dispose = [
+    				listen_dev(textarea, "input", /*textarea_input_handler*/ ctx[9]),
+    				listen_dev(textarea, "input", /*input_handler*/ ctx[10], false, false, false),
+    				listen_dev(button0, "click", /*reset*/ ctx[6], false, false, false),
+    				listen_dev(button1, "click", /*click_handler_1*/ ctx[12], false, false, false)
+    			];
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*height*/ 2 && textarea_style_value !== (textarea_style_value = `height:${/*height*/ ctx[1]}`)) {
+    				attr_dev(textarea, "style", textarea_style_value);
+    			}
+
+    			if (dirty & /*content*/ 1) {
+    				set_input_value(textarea, /*content*/ ctx[0]);
+    			}
+
+    			if (dirty & /*blurs, source, preview*/ 52) {
+    				each_value = /*source*/ ctx[5];
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$2(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block$2(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div0, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+
+    			if (dirty & /*preview*/ 16 && t4_value !== (t4_value = (/*preview*/ ctx[4] ? "Hide answers" : "Show answers") + "")) set_data_dev(t4, t4_value);
+    		},
     		i: noop,
     		o: noop,
-    		d: noop
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div3);
+    			/*textarea_binding*/ ctx[8](null);
+    			destroy_each(each_blocks, detaching);
+    			run_all(dispose);
+    		}
     	};
 
     	dispatch_dev("SvelteRegisterBlock", {
@@ -8104,10 +8294,89 @@ var app = (function () {
     	return block;
     }
 
+    function instance$b($$self, $$props, $$invalidate) {
+    	let content = "Click on a word component to find its meaning. Learn the word components for the exercises that follow by repeatedly checking their meaning:";
+    	let height = "18";
+
+    	let source = [
+    		["Removal of", "-ectomy"],
+    		["Inflammation of", "-itis"],
+    		["Incision into", "-tomy"],
+    		["Study of", "-logy"],
+    		["Instrument to view", "-scope"],
+    		["Protrusion/Hernia", "-cele"],
+    		["Disease of", "-pathy"],
+    		["An opening into", "-stomy"]
+    	];
+
+    	const reset = () => {
+    		$$invalidate(2, blurs = Object.fromEntries(source.map(s => [s[1], true])));
+    	};
+
+    	onMount(() => {
+    		$$invalidate(1, height = "0");
+    		setTimeout(() => $$invalidate(1, height = `${title.scrollHeight}px`), 0);
+    	});
+
+    	let suffixes = source.map(s => s[1]);
+    	let blurs = Object.fromEntries(source.map(s => [s[1], true]));
+    	let title;
+    	let preview = false;
+
+    	function textarea_binding($$value) {
+    		binding_callbacks[$$value ? "unshift" : "push"](() => {
+    			$$invalidate(3, title = $$value);
+    		});
+    	}
+
+    	function textarea_input_handler() {
+    		content = this.value;
+    		$$invalidate(0, content);
+    	}
+
+    	const input_handler = e => {
+    		$$invalidate(1, height = "0px");
+    		setTimeout(() => $$invalidate(1, height = `${e.target.scrollHeight}px`), 0);
+    	};
+
+    	const click_handler = answer => $$invalidate(2, blurs[answer[1]] = !blurs[answer[1]], blurs);
+    	const click_handler_1 = () => $$invalidate(4, preview = !preview);
+
+    	$$self.$capture_state = () => {
+    		return {};
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ("content" in $$props) $$invalidate(0, content = $$props.content);
+    		if ("height" in $$props) $$invalidate(1, height = $$props.height);
+    		if ("source" in $$props) $$invalidate(5, source = $$props.source);
+    		if ("suffixes" in $$props) suffixes = $$props.suffixes;
+    		if ("blurs" in $$props) $$invalidate(2, blurs = $$props.blurs);
+    		if ("title" in $$props) $$invalidate(3, title = $$props.title);
+    		if ("preview" in $$props) $$invalidate(4, preview = $$props.preview);
+    	};
+
+    	return [
+    		content,
+    		height,
+    		blurs,
+    		title,
+    		preview,
+    		source,
+    		reset,
+    		suffixes,
+    		textarea_binding,
+    		textarea_input_handler,
+    		input_handler,
+    		click_handler,
+    		click_handler_1
+    	];
+    }
+
     class WordComponents extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, null, create_fragment$b, safe_not_equal, {});
+    		init(this, options, instance$b, create_fragment$b, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -8119,7 +8388,7 @@ var app = (function () {
     }
 
     /* src/App.svelte generated by Svelte v3.18.2 */
-    const file$a = "src/App.svelte";
+    const file$b = "src/App.svelte";
 
     // (30:6) <Title>
     function create_default_slot_6(ctx) {
@@ -8507,7 +8776,7 @@ var app = (function () {
     			t1 = space();
     			if (switch_instance) create_component(switch_instance.$$.fragment);
     			attr_dev(div, "class", "container");
-    			add_location(div, file$a, 44, 0, 1162);
+    			add_location(div, file$b, 44, 0, 1162);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8604,7 +8873,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$b($$self, $$props, $$invalidate) {
+    function instance$c($$self, $$props, $$invalidate) {
     	const builders = [Dictionary, WordComponents];
     	let active = 1;
     	let tabs = [`Dictionary`, `Word Components`];
@@ -8629,7 +8898,7 @@ var app = (function () {
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$b, create_fragment$c, safe_not_equal, {});
+    		init(this, options, instance$c, create_fragment$c, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
